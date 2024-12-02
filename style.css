@@ -3,17 +3,298 @@
     padding:0;
     box-sizing:border-box;
     font-size: 16px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
 }
 
-        /* RESPONSIVIDADE */
-
-/* Media query para dispositivos com largura máxima de 768px (tablets e celulares) */
-@media (max-width: 768px) {
-    body {font-size: 14px;}
+body{
+    margin: 0; padding: 0;
+    height:100vh;
+    
 }
 
-/* Media query para dispositivos com largura máxima de 480px (celulares) */
-@media (max-width: 480px) {
-    body {font-size: 12px;}
+.maskFilter{
+    position:absolute;
+    width:100%;
+    height:calc(100%*6);
+    backdrop-filter: saturate(150%) ;
+    backdrop-filter: brightness(120%);
+    
 }
+
+.displayContent{
+    position:absolute;    
+    height:calc(100%*8);
+    width:44%;
+    margin-left: 10px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px 1px #fff;
+    & img{
+        width:100%;
+        border-radius: 10px;
+        margin-bottom: 5px;
+    }   
+    
+    
+    
+}
+
+h2{
+    color: transparent;
+    font-size:6em;
+    -webkit-text-stroke: 1px #fff;
+    text-shadow: 0  0 10px #fff;
+    font-style: italic;
+   
+}
+h3{
+    font-size: 3em;
+    color: #fff;
+    margin: 1rem 0;
+}
+blockquote{
+    width:90%;
+    margin: 0 auto;
+}
+
+dl{
+    color:#fff;
+    font-size: 1.5em;
+    margin:1rem 0;
+    list-style: circle;
+    cursor: pointer;
+    &:hover{
+        text-decoration: 1px underline;
+        text-shadow: 0  0 5px #fff;
+    }
+}
+
+ 
+
+dl::after{
+    display: none;
+    content:"click para abrir.";
+    position:absolute;
+    border-color: #242323 transparent transparent transparent;
+    background: #242323;
+    font-size: 0.8em;
+    border-radius: 10px ;
+    transform: translate(60px,-80px);
+    padding: 8px;
+    box-shadow: 0 0 5px 1px #fff;
+   
+} 
+dl:hover::after{
+    display: block;
+    
+   
+} 
+
+span{
+    font-size: 1em;
+    color: #000000;
+    
+    
+    
+}
+
+dl:hover span{
+    display: block;
+}
+
+
+
+
+
+dd{
+
+    font-size: 1.2em;
+    color: #000000;
+    display: none;
+    color:#fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s linear;
+    text-align: justify;
+    text-shadow: 0 0 5px #000;
+   
+}
+
+figcaption{
+    color: #ffffff;
+    font-size: large;
+    font-style: italic;
+}
+
+
+
+
+
+
+section{
+    width: 100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+ .thumb2, .thumb3, .thumb4, .thumb5, .thumb6, .thumb7, .thumb8{
+    width:400px;
+    position:absolute;    
+    border-radius: 15px ;
+    outline: 6px double #fff;
+    outline-offset: 8px;
+    cursor: pointer;
+    transition: 0.2s linear;
+    right:20%;
+    
+    
+       
+   
+    
+}
+
+.flip-card{
+    width: 400px;
+    background-color: transparent;
+    height: 300px;
+    perspective: 1000px;
+    position: absolute;
+    left: 110%;       
+    transition: left 1s ease-out;
+    
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s linear;
+    transform-style: preserve-3d;
+    
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+    .flip-card-back {
+        backdrop-filter: blur(15px);
+        color: white;
+        border-radius: 15px ;
+        outline: 6px double #fff;
+        outline-offset: 8px;        
+        transform: rotateY(180deg);
+        
+        & p{
+            font-size: 2.5em;
+            margin-top: 25%;
+            font-style: italic;
+            text-shadow: 1px 1px 10px #000;
+        }
+      }
+
+
+
+
+.imgFundo{
+    
+     height:100vh;
+   
+     background-image: url('https://images.unsplash.com/photo-1516888693095-f0e05366ddc6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmlibGlvdGVjYXMlMjBhbnRpZ2FzfGVufDB8fDB8fHww'); 
+}
+
+
+.imgFundo2{
+    
+     height:100vh;
+   
+     background-image: url(https://images.unsplash.com/photo-1508107463927-a0505bf6fee3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmlibGlvdGVjYXMlMjBhbnRpZ2FzfGVufDB8fDB8fHww);
+}
+
+
+.imgFundo3{
+    
+    height:100vh;
+  
+    background-image: url(https://images.unsplash.com/photo-1505488387362-48bc38155987?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJpYmxpb3RlY2FzJTIwYW50aWdhc3xlbnwwfHwwfHx8MA%3D%3D);
+}
+
+
+.imgFundo4{
+    
+    height:100vh;  
+    background-image: url(https://images.unsplash.com/photo-1521920592574-49e0b121c964?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJpYmxpb3RlY2F8ZW58MHx8MHx8fDA%3D);
+}
+
+.imgFundo5{
+    
+    height:100vh;  
+    background-image: url(https://images.unsplash.com/photo-1463143296037-46790ff95a7e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D);
+}
+
+.imgFundo6{
+    
+    height:100vh;  
+    background-image: url(https://images.unsplash.com/photo-1465929639680-64ee080eb3ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8);
+}
+
+.imgFundo7{
+    
+    height:100vh;  
+    background-image: url(https://images.unsplash.com/photo-1531259736756-6caccf485f81?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmlibGlvdGVjYXN8ZW58MHx8MHx8fDA%3D);
+}
+
+.imgFundo8{
+    
+    height:100vh;  
+    background-image: url(https://media.istockphoto.com/id/1816810090/pt/foto/3d-rendering-magic-library.webp?a=1&b=1&s=612x612&w=0&k=20&c=C7OPRpTqpsq4jZvCU7CxRqFi7wIsOeSFEUQMhmSAj3o=);
+}
+
+footer{
+    height: 200px;
+    background: #000000;
+    box-shadow: inset 0 0 40px 5px #fcce00;
+    & p,span{
+        font-size: 1.5em;
+        color: #ffffff;
+        text-shadow: 0 0 5px #fffb00;
+        
+    }
+}
+
+.footer{
+    padding: 60px;
+}
+
+@media (max-width:1000px){
+    .flip-card{
+        display: none;
+
+    }
+
+    *{
+        font-size:2px
+    }
+}
+@media (max-width:1350px){
+  
+
+    *{
+        font-size:14px
+    }
+
+}
+
+
+        
